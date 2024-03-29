@@ -113,5 +113,8 @@ svg-icon{
 input:focus{
 	outline: none;
 }
+input{
+	font-family: Arial, sans-serif;
+}
 
 </style>

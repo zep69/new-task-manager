@@ -46,16 +46,21 @@ export default {
 </script>
 
 <style scoped>
+button{
+	cursor:pointer;
+}
 .text{
 	background: none;
 	border: none;
 	color:var(--color-border-windows);
+
 }
 .outlined{
 	background:none;
 	color:var(--color-border-windows);
 	border: solid 2px;
 	border-color:var(--color-border-windows)
+
 }
 .default{
 	background-color: var(--color-border-windows);

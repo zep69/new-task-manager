@@ -9,8 +9,12 @@
 		<div class="rowCenter"  style="margin-top: 15px;">
 			<TextField :type="'password'" placeholder="Password" width="350" height="50"/>
 		</div>
-		<div class="rowCenter" style="margin-top: 15px;">
-			<Button text="Войти" width="100" typeClass="default"></Button>
+		<div class="rowCenter" style="margin-top: 30px;">
+			<Button text="Войти" width="350" typeClass="default" ></Button>
+		</div>
+		<div class="rowCenter" style="align-items: center">
+			<span>Нет аккаунта?</span>
+			<Button :typeClass="'text'" width="150" text="Зарегистрируйтесь" @click="$router.push('/signup')"/>
 		</div>
 	</div>
 </template>
