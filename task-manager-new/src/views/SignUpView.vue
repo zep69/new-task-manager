@@ -1,5 +1,8 @@
 <template>
-	<SignUpWindow />
+	<div class="mainLogin">
+		<SignUpWindow />
+	</div>
+
 </template>
 
 <script>

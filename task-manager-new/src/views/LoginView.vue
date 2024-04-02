@@ -1,9 +1,13 @@
 <template>
-	<LoginWindow/>
+	<div class="mainLogin">
+		<LoginWindow  />
+	</div>
+
 </template>
 
 <script>
-import LoginWindow from "../components/LoginWindow";
+
+import LoginWindow from "../components/LoginWindow.vue";
 export default {
 	name: "LoginView",
 	components:{
@@ -13,5 +17,13 @@ export default {
 </script>
 
 <style scoped>
+.main{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center	;
+}
+
+
 
 </style>
