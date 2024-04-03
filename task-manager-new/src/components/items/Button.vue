@@ -48,6 +48,7 @@ export default {
 <style scoped>
 button{
 	cursor:pointer;
+	font-family: "Roboto Medium";
 }
 .text{
 	background: none;

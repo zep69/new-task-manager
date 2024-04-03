@@ -35,7 +35,14 @@ const router = createRouter({
     {
       path:'/main',
       name:'main',
-      component: () => import('../views/MainView.vue')
+      component: () => import('../views/MainView.vue'),
+      children:[
+        {
+          path:'/main/profile',
+          name:'profile',
+          component: () => import('../views/main/ProfileView.vue')
+        }
+      ]
     }
 
   ]
