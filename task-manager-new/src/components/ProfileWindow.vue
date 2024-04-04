@@ -1,12 +1,55 @@
 <template>
 	<div class="profileCard">
-		<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+		<div style=" padding: 15px;">
+			<div style="display: flex; justify-content: center;">
+				<div style=" height:300px ">
+					<Avatar/>
+				</div>
+			</div>
+
+
+			<br>
+			<div style="display: flex; justify-content: center; margin: 15px 10px 0 10px; align-items: center; ">
+				<span style="font-family: Arial, sans-serif; ">Имя:</span>
+				<h2 style="color:var(--color-border-windows);margin-left: 10px; ">Name Name</h2>
+			</div>
+			<div style="display: flex; justify-content: center; margin: 15px 10px 0 10px; align-items: center; ">
+				<span style="font-family: Arial, sans-serif; ">Должность:</span>
+				<h3 style="color:var(--color-border-windows);margin-left: 10px; ">Тестировщик всякой всячины</h3>
+			</div>
+			<div style="display: flex; justify-content: center; margin: 15px 10px 0 10px; align-items: center; ">
+				<span style="font-family: Arial, sans-serif; ">email:</span>
+				<h3 style="color:var(--color-border-windows);margin-left: 10px; ">test@test.test</h3>
+			</div>
+			<div style="display: flex; justify-content: center		; margin: 15px 10px 0 10px; align-items: center; ">
+				<span style="font-family: Arial, sans-serif; ">Дата приема:</span>
+				<h3 style="color:var(--color-border-windows);margin-left: 10px; ">04.04.2024</h3>
+			</div>
+			<div style="display: flex; justify-content: center		; margin: 15px 10px 0 10px; align-items: center; ">
+				<span style="font-family: Arial, sans-serif; ">День рождения:</span>
+				<h3 style="color:var(--color-border-windows);margin-left: 10px; ">01.01.2000 (24 года)</h3>
+			</div>
+			<div style="display: flex; justify-content: center		; margin: 15px 10px 0 10px; align-items: center; ">
+				<TelegramIcon style="height: 35px; width: 40px"/>
+				<VkIcon style="height: 35px; width: 40px"/>
+			</div>
+
+		</div>
+
+
 	</div>
+
 </template>
 
 <script>
+import VkIcon from "./icons/VkIcon.vue";
+import TelegramIcon from "./icons/TelegramIcon.vue";
+import Avatar from "./items/Avatar.vue";
 export default {
-	name: "ProfileWindow"
+	name: "ProfileWindow",
+	components:{
+		Avatar, TelegramIcon, VkIcon
+	}
 }
 </script>
 
@@ -15,5 +58,8 @@ export default {
 	width: 580px;
 	border-radius: 15px;
 	background-color: var(--color-background-softmute);
+	-webkit-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	-moz-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
 }
 </style>

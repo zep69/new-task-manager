@@ -1,7 +1,8 @@
 <template>
 	<div style="display: flex; justify-content: space-around;">
 		<div class="profile">
-			<h1 style="color:var(--color-border-windows)">Тут будет профиль пользователя</h1>
+			<!-- <h1 style="color:var(--color-border-windows)">Тут будет профиль пользователя</h1> -->
+
 			<div style="display: flex; justify-content: center;">
 				<ProfileWindow />
 			</div>
