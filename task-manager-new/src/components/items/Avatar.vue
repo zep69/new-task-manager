@@ -1,12 +1,20 @@
 <template>
 	<div class="profile-pic">
-		<img class="profile-pic-image" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" />
+		<img class="profile-pic-image" :src="$props.srcImg" />
 	</div>
 </template>
 
 <script>
 export default {
-	name: "Avatar"
+	name: "Avatar",
+	props:{
+		srcImg:{
+			type:String,
+			default(){
+				return 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500'
+			}
+		}
+	}
 }
 </script>
 

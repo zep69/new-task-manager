@@ -10,7 +10,7 @@
 						</div>
 						<div class="btnGroup" style=" margin-left: 10px;">
 							<svg-icon style="color:var(--color-border-windows)" type="mdi" :path="icon2"></svg-icon>
-							<Button :typeClass="'text'" width="100" :text="'Мои задачи'"/>
+							<Button :typeClass="'text'" width="100" :text="'Мои задачи'" @click="$router.push('/main/task')"/>
 						</div>
 						<div class="btnGroup" style=" margin-left: 10px;">
 							<svg-icon style="color:var(--color-border-windows)" type="mdi" :path="icon3"></svg-icon>
@@ -60,7 +60,7 @@ export default {
 <style scoped>
 .mainView{
 	width: 100vw;
-	height: 100vh;
+
 	background-color: var(--color-background-soft);
 	border-radius: 15px;
 	margin-top: 10px;

@@ -6,22 +6,85 @@
 			<div style="display: flex; justify-content: center;">
 				<ProfileWindow />
 			</div>
+			<br>
+			<div style="display: flex; justify-content: center;">
+				<BirthDayWindow />
+			</div>
 
 		</div>
 		<div class="blockInfo">
-			<h1 style="color:var(--color-border-windows)">Тут будет информация об активных задачахх, график табель за неделю, ближайшие дни рождения</h1>
-			<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+			<div class="chartsBlock" style="display: flex; justify-content: center;height: 380px; ">
+				<div style="margin-top: 30px;">
+					<div style="display: flex; justify-content: center;">
+						<h3 style="color: var(--color-border-windows)">Ваши показатели выполенных задач</h3>
+					</div>
+					<BarChart style="width: 550px; "/>
+				</div>
+				<div style="margin-top: 30px;">
+					<div style="display: flex; justify-content: center;">
+						<h3 style="color: var(--color-border-windows)">Посещаемость за неделю</h3>
+					</div>
+					<BarChart style="width: 550px; " :chartData="dataChart"/>
+				</div>
+			</div>
+			<br>
+			<div class="taskBlock">
+				<div style="display: flex; justify-content: center;">
+					<h2 style="color: var(--color-border-windows)">Активные задачи</h2>
+				</div>
+				<br>
+				<div v-for="item in taskArr">
+					<TaskRow :title="item.title" :body="item.body"/>
+					<br>
+				</div>
+			</div>
 		</div>
 
 	</div>
 </template>
 
 <script>
+import BirthDayWindow from "../../components/BirthDayWindow.vue";
+import TaskRow from "../../components/items/TaskRow.vue";
+import BarChart from "../../components/items/BarChart.vue";
 import ProfileWindow from "../../components/ProfileWindow.vue";
 export default {
 	name: "ProfileView",
 	components:{
-		ProfileWindow
+		ProfileWindow, BarChart, TaskRow, BirthDayWindow
+	},
+	data(){
+		return{
+			taskArr:[
+				{
+					title:'Что-то поделать',
+					body:'\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"'
+				},
+				{
+					title:'Настроить какой-то комп',
+					body:'В городе N сломался комп полностью, не включается, НУЖНО СРОЧНО ВСЕ ПОЧИНИТЬ ИНАЧЕ ОН ВЗОРВЕТСЯ'
+				},
+				{
+					title:'Удалить Олегу Тик-ток',
+					body:'80% рабочего времени трратит на просмотр преколов. Города ждут ответа уже более полу года. Просим предпринять какие-нибудь меры!!!'
+				},
+				{
+					title:'Юра взорвал Оренбургскую область',
+					body:'Нужно всему МегаХех-отделу приехать на вызженную площадь и заново отстроить область. Максим на работе, так что придется своими силами. ЭТО СРОЧНАЯ ЗАДАЧА, ПРЕЗИДЕНТ НЕ ДОВОЛЕН'
+				},
+
+			],
+			dataChart:{
+				labels: [ '01.04.2024', '02.04.2024', '03.04.2024', '04.04.2024', '05.04.2024'],
+				datasets: [
+					{
+						label: 'Часов отработано',
+						backgroundColor: '#D4B102FF',
+						data: ['8.5', '7.67', '8.22', '9.1', '6.8']
+					},
+				]
+			}
+		}
 	}
 }
 </script>
@@ -39,5 +102,20 @@ export default {
 	width: 1200px;
 	border-radius: 15px;
 	padding: 10px;
+}
+.chartsBlock{
+	background-color: var(--color-background-softmute);
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	-moz-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48)
+}
+.taskBlock{
+	padding: 10px;
+	background-color: var(--color-background-softmute);
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	-moz-box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48);
+	box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.48)
 }
 </style>
