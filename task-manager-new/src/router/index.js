@@ -45,7 +45,14 @@ const router = createRouter({
         {
           path:'/main/task',
           name:'task',
-          component: ()=> import('../views/TaskView.vue')
+          component: ()=> import('../views/main/TaskView.vue'),
+          children:[
+            {
+              path:'/main/task/my',
+              name:'myTask',
+              component:()=> import('../views/main/task/MyTaskView.vue')
+            }
+          ]
         }
       ]
     }
